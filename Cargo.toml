@@ -1,0 +1,29 @@
+[package]
+name = "rs-sdk"
+version = "0.0.1"
+edition = "2021"
+authors = ["Metanet SV Team"]
+license = "MIT OR Apache-2.0"
+description = "Bitcoin SV (BSV) Rust SDK: auth, identity, overlay, storage, wallet, transaction, message"
+repository = "https://example.com/rs-sdk"
+
+[lib]
+name = "rs_sdk"
+path = "src/lib.rs"
+crate-type = ["rlib"]
+
+[features]
+default = ["std"]
+std = []
+# WASM bindings and JS interop will be added under this feature
+wasm = ["std"]
+# Optional network functionality behind a trait
+network = ["std"]
+
+[dependencies]
+sha2 = "0.10"
+ripemd = "0.1"
+bs58 = "0.4"
+
+[dev-dependencies]
+# add test-only deps later
